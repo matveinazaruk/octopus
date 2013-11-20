@@ -1,5 +1,5 @@
 <html>
 <body>
-<h2>Octopus</h2>
+<h2>Octopus v0.1</h2>
 </body>
 </html>
