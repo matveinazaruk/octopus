@@ -1,5 +1,7 @@
 *.class
 *~
+.classpath
+.project
 
 # Package Files #
 *.jar
@@ -8,3 +10,4 @@
 
 #folders
 targer
+
