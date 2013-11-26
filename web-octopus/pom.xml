@@ -38,16 +38,18 @@
 			<artifactId>spring-webmvc</artifactId>
 			<version>${spring.version}</version>
 		</dependency>
-
-		<!-- jstl -->
-		<dependency>
-			<groupId>javax.servlet</groupId>
-			<artifactId>jstl</artifactId>
-			<version>1.2</version>
-		</dependency>
-		
   </dependencies>
   <build>
     <finalName>octopus</finalName>
+    <plugins>
+	    <plugin>
+		    <artifactId>maven-compiler-plugin</artifactId>
+		    <version>2.3.2</version>
+		    <configuration>
+			    <source>1.7</source>
+			    <target>1.7</target>
+		    </configuration>
+	    </plugin>
+    </plugins>
   </build>
 </project>
