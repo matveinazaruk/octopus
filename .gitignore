@@ -9,5 +9,9 @@
 *.ear
 
 #folders
+<<<<<<< HEAD
 targer
 
+=======
+target
+>>>>>>> 06b5676d5d364305409edd054abc553be0d00725
