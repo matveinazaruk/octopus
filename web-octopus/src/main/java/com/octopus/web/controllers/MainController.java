@@ -1,4 +1,4 @@
-package com.octopus.web;
+package com.octopus.web.controllers;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;

@@ -10,6 +10,7 @@
 
   <properties>
 		<spring.version>3.0.5.RELEASE</spring.version>
+    <jackson.version>1.9.10</jackson.version>
 	</properties>
 
   <dependencies>
@@ -37,6 +38,13 @@
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-webmvc</artifactId>
 			<version>${spring.version}</version>
+		</dependency>
+
+    <!-- Jackson JSON Mapper -->
+		<dependency>
+			<groupId>org.codehaus.jackson</groupId>
+			<artifactId>jackson-mapper-asl</artifactId>
+			<version>${jackson.version}</version>
 		</dependency>
   </dependencies>
   <build>
