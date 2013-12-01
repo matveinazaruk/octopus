@@ -1,22 +1,23 @@
 package com.octopus.social;
 
-import java.util.ArrayList;
-import java.util.Date;
+import java.util.Random;
 
-import com.octopus.data.ChartData;
+import com.octopus.data.ServiceData;
 
 public class FakeSocialService implements ISocialService {
 
-	@SuppressWarnings("deprecation")
 	@Override
-	public ArrayList<ChartData> getData() {
-		ArrayList<ChartData> dataList = new ArrayList<ChartData>();
-		dataList.add(new ChartData(new Date(2001, 7, 19), 5.6));
-		dataList.add(new ChartData(new Date(2001, 8, 5), 3.5));
-		dataList.add(new ChartData(new Date(2001, 9, 8), 4.2));
-		dataList.add(new ChartData(new Date(2001, 10, 24), 2.3));
-		dataList.add(new ChartData(new Date(2001, 12, 17), 4.5));
-		dataList.add(new ChartData(new Date(2001, 12, 19), 5.2));
-		return dataList;
+	public ServiceData[] getData() {
+		int number = 10;
+		ServiceData[] serviceData = new ServiceData[number];
+		Random rand = new Random();
+		long currentDate = 980980764764L; //jan 1, 2001
+		long day = 86400000L;
+		for (int i = 0; i < number; i++) {
+			currentDate = currentDate + ((long)rand.nextInt(30) + 1) * day;
+		    serviceData[i] 
+		    		= new ServiceData(currentDate, ((double)rand.nextInt(200)) / 10);
+		}
+		return serviceData;
 	}
 }

@@ -1,10 +1,8 @@
 package com.octopus.social;
 
-import java.util.ArrayList;
-
-import com.octopus.data.ChartData;
+import com.octopus.data.ServiceData;
 
 public interface ISocialService {
 
-	abstract public ArrayList<ChartData> getData();
+	abstract public ServiceData[] getData();
 }
