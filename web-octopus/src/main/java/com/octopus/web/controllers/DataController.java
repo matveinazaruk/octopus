@@ -9,12 +9,12 @@ import com.octopus.data.JsonData;
 import com.octopus.social.FakeSocialService;
 
 @Controller
-@RequestMapping("/data/social")
-public class SocialDataController {
+@RequestMapping("/data/")
+public class DataController {
 	
 	@RequestMapping(method = RequestMethod.GET)
 	public @ResponseBody JsonData getData() {
 		FakeSocialService fakeService = new FakeSocialService();
-		return new JsonData("social", fakeService.getData());
+		return new JsonData("social", fakeService.getData(), "stock", fakeService.getData());
 	}
 }

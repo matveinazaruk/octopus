@@ -2,27 +2,50 @@ package com.octopus.data;
 
 public class JsonData {
 	
-	private String name;
-	private ServiceData[] data;
+	private String socialName;
+	private String stockName;
+	private ServiceData[] socialData;
+	private ServiceData[] stockData;
 	
-	public JsonData(String name, ServiceData[] data) {
-		this.name = name;
-		this.data = data;
+	public JsonData(String socialName, ServiceData[] socialData, String stockName,
+			ServiceData[] stockData) {
+		this.socialName = socialName;
+		this.stockName = stockName;
+		this.socialData = socialData;
+		this.stockData = stockData;
 	}
 
-	public String getName() {
-		return name;
+	public String getSocialName() {
+		return socialName;
 	}
 
-	public void setName(String name) {
-		this.name = name;
+	public void setSocialName(String socialName) {
+		this.socialName = socialName;
 	}
 
-	public ServiceData[] getData() {
-		return data;
+	public String getStockName() {
+		return stockName;
 	}
 
-	public void setData(ServiceData[] data) {
-		this.data = data;
+	public void setStockName(String stockName) {
+		this.stockName = stockName;
 	}
+
+	public ServiceData[] getSocialData() {
+		return socialData;
+	}
+
+	public void setSocialData(ServiceData[] socialData) {
+		this.socialData = socialData;
+	}
+
+	public ServiceData[] getStockData() {
+		return stockData;
+	}
+
+	public void setStockData(ServiceData[] stockData) {
+		this.stockData = stockData;
+	}
+
+	
 }

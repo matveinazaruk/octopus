@@ -1,15 +1,26 @@
 $(document).ready(function () {
-  $.getJSON( "data/social", function(socialData) {
+  $.getJSON("data/", function(data) {
 
-    var line = new Object();
-    line.name = socialData.name;
-    line.data = new Array();
+    var socialChart = new Object();
+    socialChart.name = data.socialName;
+    socialChart.data = new Array();
      
-    for (var i = 0; i < socialData.data.length; i++) {
+    for (var i = 0; i < data.socialData.length; i++) {
       var obj = new Array();
-      obj[0] = socialData.data[i].date;
-      obj[1] = socialData.data[i].value;
-      line.data[i] = obj; 
+      obj[0] = data.socialData[i].date;
+      obj[1] = data.socialData[i].value;
+      socialChart.data[i] = obj; 
+    }
+
+    var stockChart = new Object();
+    stockChart.name = data.stockName;
+    stockChart.data = new Array();
+     
+    for (var i = 0; i < data.stockData.length; i++) {
+      var obj = new Array();
+      obj[0] = data.stockData[i].date;
+      obj[1] = data.stockData[i].value;
+      stockChart.data[i] = obj; 
     }
 
     $('#container').highcharts({
@@ -43,7 +54,7 @@ $(document).ready(function () {
           verticalAlign: 'middle',
           borderWidth: 0
       },
-      series: [line]
+      series: [socialChart, stockChart]
     });
   });
 });
