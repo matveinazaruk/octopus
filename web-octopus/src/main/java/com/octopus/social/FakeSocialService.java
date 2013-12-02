@@ -11,7 +11,7 @@ public class FakeSocialService implements ISocialService {
 		int number = 10;
 		ServiceData[] serviceData = new ServiceData[number];
 		Random rand = new Random();
-		long currentDate = 980980764764L; //jan 1, 2001
+		long currentDate = 978379982566L; //jan 1, 2001
 		long day = 86400000L;
 		for (int i = 0; i < number; i++) {
 			currentDate = currentDate + ((long)rand.nextInt(30) + 1) * day;

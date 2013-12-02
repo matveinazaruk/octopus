@@ -7,13 +7,15 @@ $(document).ready(function () {
      
     for (var i = 0; i < socialData.data.length; i++) {
       var obj = new Array();
-      obj[0] = new Date(socialData.data[i].date);
-      console.log("i = " + i + ", date = " + obj[0]);
+      obj[0] = socialData.data[i].date;
       obj[1] = socialData.data[i].value;
       line.data[i] = obj; 
     }
-  
+
     $('#container').highcharts({
+      chart: {
+          type: 'spline'
+      },
       title: {
           text: 'Dependency chart',
           x: -20 //center
