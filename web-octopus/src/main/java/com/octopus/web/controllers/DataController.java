@@ -7,11 +7,10 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.octopus.data.JsonData;
 import com.octopus.data.ServiceData;
+import com.octopus.database.ArrayDataConnector;
 import com.octopus.database.DatabaseFactory;
-import com.octopus.database.IDbConnector;
+import com.octopus.database.IDataConnector;
 import com.octopus.exceptions.OctopusTechnicalException;
-import com.octopus.social.FakeSocialService;
-import com.octopus.stock.FakeStockService;
 
 @Controller
 @RequestMapping("/data/")
@@ -19,12 +18,9 @@ public class DataController {
 	
 	@RequestMapping(method = RequestMethod.GET)
 	public @ResponseBody JsonData getData() {
-		FakeSocialService fakeSocial = new FakeSocialService();
-		FakeStockService fakeStock = new FakeStockService();
-		fakeSocial.addDate();
-		fakeStock.addDate();
+		ArrayDataConnector.updateData();
 		DatabaseFactory factory = new DatabaseFactory();
-		IDbConnector db = factory.getServiceDataBase("social");
+		IDataConnector db = factory.getServiceDataBase("social");
 		ServiceData[] social = null;
 		ServiceData[] stock = null;
 		try {

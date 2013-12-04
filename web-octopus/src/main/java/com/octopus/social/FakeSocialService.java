@@ -1,15 +1,14 @@
 package com.octopus.social;
 
+import java.util.Date;
 import java.util.Random;
 
+import com.octopus.common.IService;
 import com.octopus.data.ServiceData;
-import com.octopus.database.DatabaseFactory;
-import com.octopus.database.IDbConnector;
-import com.octopus.exceptions.OctopusTechnicalException;
 
-public class FakeSocialService {
+public class FakeSocialService implements IService {
 	
-	public void addDate() {
+	public ServiceData[] getData(Date start, Date end) {
 		int number = 10;
 		ServiceData[] serviceData = new ServiceData[number];
 		Random rand = new Random();
@@ -20,12 +19,6 @@ public class FakeSocialService {
 		    serviceData[i] 
 		    		= new ServiceData(currentDate, ((double)rand.nextInt(200)) / 10);
 		}
-		DatabaseFactory factory = new DatabaseFactory();
-		IDbConnector connector = factory.getServiceDataBase("social");
-		try {
-			connector.setData(serviceData);
-		} catch (OctopusTechnicalException e) {
-			e.printStackTrace();
-		}
+		return serviceData;
 	}
 }
