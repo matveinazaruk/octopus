@@ -1,4 +1,4 @@
-package com.octopus.social;
+package com.octopus.stock;
 
 import java.util.Random;
 
@@ -7,7 +7,7 @@ import com.octopus.database.DatabaseFactory;
 import com.octopus.database.IDbConnector;
 import com.octopus.exceptions.OctopusTechnicalException;
 
-public class FakeSocialService {
+public class FakeStockService {
 	
 	public void addDate() {
 		int number = 10;
@@ -21,7 +21,7 @@ public class FakeSocialService {
 		    		= new ServiceData(currentDate, ((double)rand.nextInt(200)) / 10);
 		}
 		DatabaseFactory factory = new DatabaseFactory();
-		IDbConnector connector = factory.getServiceDataBase("social");
+		IDbConnector connector = factory.getServiceDataBase("stock");
 		try {
 			connector.setData(serviceData);
 		} catch (OctopusTechnicalException e) {
