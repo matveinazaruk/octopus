@@ -5,6 +5,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import com.octopus.common.Date;
 import com.octopus.data.JsonData;
 import com.octopus.data.ServiceData;
 import com.octopus.database.ArrayDataConnector;
@@ -24,9 +25,9 @@ public class DataController {
 		ServiceData[] social = null;
 		ServiceData[] stock = null;
 		try {
-			social = db.getData(null, null);
+			social = db.getData(new Date(0), new Date(0));
 			db = factory.getServiceDataBase("stock");
-			stock = db.getData(null, null);
+			stock = db.getData(new Date(0), new Date(0));
 		} catch (OctopusTechnicalException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

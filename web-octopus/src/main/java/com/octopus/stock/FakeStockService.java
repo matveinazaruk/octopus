@@ -1,8 +1,8 @@
 package com.octopus.stock;
 
-import java.util.Date;
 import java.util.Random;
 
+import com.octopus.common.Date;
 import com.octopus.common.IService;
 import com.octopus.data.ServiceData;
 

@@ -1,8 +1,9 @@
 package com.octopus.social;
 
-import java.util.Date;
+
 import java.util.Random;
 
+import com.octopus.common.Date;
 import com.octopus.common.IService;
 import com.octopus.data.ServiceData;
 

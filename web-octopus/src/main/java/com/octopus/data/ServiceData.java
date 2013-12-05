@@ -1,5 +1,7 @@
 package com.octopus.data;
 
+import com.octopus.common.Date;
+
 
 public class ServiceData {
 	
@@ -9,6 +11,12 @@ public class ServiceData {
 	public ServiceData(long date, double value) {
 		super();
 		this.date = date;
+		this.value = value;
+	}
+	
+	public ServiceData(Date date, double value) {
+		super();
+		this.date = date.getMsec();
 		this.value = value;
 	}
 

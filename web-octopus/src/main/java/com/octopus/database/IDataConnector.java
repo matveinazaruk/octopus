@@ -1,7 +1,7 @@
 package com.octopus.database;
 
-import java.util.Date;
 
+import com.octopus.common.Date;
 import com.octopus.data.ServiceData;
 import com.octopus.exceptions.OctopusTechnicalException;
 
